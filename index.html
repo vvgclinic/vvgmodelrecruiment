@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VvG 성형피부과 - 리얼 모델 모집 | Tuyển Mộ Người Mẫu Thực Tế</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #faf7f4;
+    --stone: #f0ebe4;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --rose: #c0726a;
+    --rose-dark: #9e5a53;
+    --charcoal: #2c2420;
+    --muted: #8a7e78;
+    --viet-text: #9b8f89;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  .viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--viet-text);
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* NAVBAR */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(250,247,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .nav-cta {
+    background: var(--rose);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--rose-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 72px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,169,110,0.12);
+    border: 1px solid rgba(201,169,110,0.4);
+    padding: 6px 16px;
+    margin-bottom: 36px;
+    width: fit-content;
+  }
+
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-badge span {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-title-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #6b5e58;
+    margin-bottom: 6px;
+    max-width: 420px;
+  }
+
+  .hero-desc-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--viet-text);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 420px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--rose);
+    color: #fff;
+    padding: 16px 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: var(--rose-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(192,114,106,0.35);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+    padding: 15px 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    border: 1.5px solid rgba(44,36,32,0.3);
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-outline:hover {
+    border-color: var(--charcoal);
+    background: rgba(44,36,32,0.04);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(44,36,32,0.1);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  .stat-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--viet-text);
+    margin-top: 2px;
+  }
+
+  /* HERO RIGHT */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .hero-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(250,247,244,0.4) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(44,36,32,0.15) 100%
+    );
+  }
+
+  .hero-img-tag {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: rgba(250,247,244,0.92);
+    backdrop-filter: blur(8px);
+    padding: 16px 24px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .hero-img-tag-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  .hero-img-tag-sub {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .hero-img-tag-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.7rem;
+    font-style: italic;
+    color: var(--viet-text);
+    margin-top: 2px;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 100px 72px;
+  }
+
+  .section-alt {
+    background: var(--stone);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .section-eyebrow-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.68rem;
+    font-style: italic;
+    color: var(--viet-text);
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.25;
+  }
+
+  .section-title-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin: 24px auto 0;
+  }
+
+  /* BENEFITS */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .benefit-card {
+    background: #fff;
+    padding: 48px 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--rose));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .benefit-card:hover::before { transform: scaleX(1); }
+  .benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(44,36,32,0.1);
+  }
+
+  .benefit-icon {
+    width: 56px; height: 56px;
+    border: 1.5px solid var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .benefit-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+
+  .benefit-title-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--viet-text);
+    margin-bottom: 16px;
+  }
+
+  .benefit-text {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #6b5e58;
+  }
+
+  .benefit-text-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--viet-text);
+    line-height: 1.7;
+    margin-top: 6px;
+  }
+
+  /* QUALIFY */
+  .qualify-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .qualify-img-wrap {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+
+  .qualify-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .qualify-img-badge {
+    position: absolute;
+    top: 32px;
+    left: -20px;
+    background: var(--rose);
+    color: #fff;
+    padding: 12px 24px 12px 44px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .qualify-list {
+    list-style: none;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .qualify-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .qualify-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    min-width: 48px;
+  }
+
+  .qualify-item-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 2px;
+  }
+
+  .qualify-item-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--viet-text);
+    margin-bottom: 4px;
+  }
+
+  .qualify-item-desc {
+    font-size: 0.82rem;
+    color: #7a6e68;
+    line-height: 1.6;
+  }
+
+  .qualify-item-desc-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--viet-text);
+    line-height: 1.6;
+    margin-top: 2px;
+  }
+
+  /* PROCESS */
+  .process-track {
+    display: flex;
+    gap: 0;
+    position: relative;
+    margin-top: 64px;
+  }
+
+  .process-track::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-light), var(--gold-light), transparent);
+    z-index: 0;
+  }
+
+  .process-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-circle {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    transition: all 0.3s;
+  }
+
+  .process-step:hover .process-circle {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+    transform: scale(1.1);
+  }
+
+  .process-label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+
+  .process-label-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--viet-text);
+    margin-bottom: 10px;
+  }
+
+  .process-desc {
+    font-size: 0.8rem;
+    color: #7a6e68;
+    line-height: 1.65;
+  }
+
+  .process-desc-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--viet-text);
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+
+  /* FORM */
+  .form-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 0;
+    box-shadow: 0 32px 80px rgba(44,36,32,0.12);
+  }
+
+  .form-sidebar {
+    background: var(--charcoal);
+    padding: 64px 48px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .form-sidebar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .form-sidebar-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .form-sidebar-title-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 36px;
+  }
+
+  .form-sidebar-desc {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 6px;
+  }
+
+  .form-sidebar-desc-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,169,110,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg {
+    width: 16px; height: 16px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .contact-text {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .contact-text strong {
+    color: var(--gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .contact-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
+  /* Form body */
+  .form-body {
+    background: #fff;
+    padding: 56px 52px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field.full { grid-column: 1 / -1; }
+
+  .form-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.06em;
+  }
+
+  .form-label-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--viet-text);
+    margin-top: 1px;
+    display: block;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(44,36,32,0.12);
+    background: var(--cream);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    transition: border-color 0.2s;
+    outline: none;
+    appearance: none;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--gold);
+    background: #fff;
+  }
+
+  .form-textarea { resize: vertical; min-height: 90px; }
+
+  .form-input-file { display: none; }
+
+  .file-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1.5px dashed rgba(44,36,32,0.2);
+    background: var(--cream);
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .file-label:hover { border-color: var(--gold); }
+
+  .file-label-text {
+    font-size: 0.83rem;
+    color: var(--muted);
+  }
+
+  .file-label-text-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--viet-text);
+  }
+
+  .file-btn {
+    background: var(--stone);
+    border: 1px solid rgba(44,36,32,0.1);
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    color: var(--charcoal);
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .privacy-check {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 8px;
+  }
+
+  .privacy-check input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: var(--rose);
+    cursor: pointer;
+  }
+
+  .privacy-text {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .privacy-text-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--viet-text);
+    margin-top: 2px;
+    display: block;
+  }
+
+  .privacy-link { color: var(--rose); text-decoration: underline; cursor: pointer; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--rose);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 24px;
+  }
+
+  .form-submit:hover {
+    background: var(--rose-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(192,114,106,0.3);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 56px 72px 40px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 36px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-logo-sub {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.35);
+    margin-top: 6px;
+  }
+
+  .footer-logo-sub-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.68rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.25);
+    margin-top: 3px;
+  }
+
+  .footer-contact-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .footer-contact-line {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  .footer-contact-line-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 12px;
+  }
+
+  .footer-zalo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(201,169,110,0.15);
+    border: 1px solid rgba(201,169,110,0.3);
+    padding: 10px 20px;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .footer-zalo:hover { background: rgba(201,169,110,0.25); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-bottom-viet {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.72rem;
+    font-style: italic;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge      { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+  .hero-title      { animation: fadeUp 0.6s ease both; animation-delay: 0.25s; }
+  .hero-title-viet { animation: fadeUp 0.6s ease both; animation-delay: 0.35s; }
+  .hero-desc       { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
+  .hero-desc-viet  { animation: fadeUp 0.6s ease both; animation-delay: 0.5s; }
+  .hero-actions    { animation: fadeUp 0.6s ease both; animation-delay: 0.55s; }
+  .hero-stats      { animation: fadeUp 0.6s ease both; animation-delay: 0.7s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    nav { padding: 16px 24px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 60vw; max-height: 500px; }
+    .hero-left { padding: 60px 32px; }
+    .section { padding: 72px 32px; }
+    .qualify-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .qualify-img-wrap { max-width: 380px; margin: 0 auto; }
+    .form-wrap { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .process-track { flex-direction: column; gap: 40px; }
+    .process-track::before { display: none; }
+    footer { padding: 48px 32px 32px; }
+    .footer-top { flex-direction: column; gap: 40px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-field.full { grid-column: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div>
+    <div class="nav-logo">VvG<span>.</span></div>
+    <div class="nav-tag">Plastic Surgery &amp; Dermatology</div>
+  </div>
+  <a class="nav-cta" href="#apply">
+    지원하기 / Dang ky ngay
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Real Model Recruit 2025</span>
+    </div>
+
+    <h1 class="hero-title">
+      당신의 아름다움이<br/>
+      <em>VvG의 이야기</em>가 됩니다
+    </h1>
+    <p class="hero-title-viet">
+      Ve dep cua ban se tro thanh cau chuyen cua VvG
+    </p>
+
+    <p class="hero-desc">
+      VvG 성형피부과에서 리얼 모델을 모집합니다.<br/>
+      시술 전·후 변화를 함께 기록하고, 특별한 혜택을 받아보세요.
+    </p>
+    <p class="hero-desc-viet">
+      Phong kham tham my VvG tuyen mo nguoi mau thuc te.<br/>
+      Ghi lai su thay doi truoc va sau lieu trinh cung chung toi va nhan nhieu uu dai dac biet.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="#apply">지금 지원하기 / Dang ky ngay</a>
+      <a class="btn-outline" href="#benefits">혜택 보기 / Xem uu dai</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">98%</div>
+        <div class="stat-label">만족도</div>
+        <div class="stat-viet">Muc do hai long</div>
+      </div>
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">누적 리얼 모델</div>
+        <div class="stat-viet">Nguoi mau tich luy</div>
+      </div>
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">시술 항목</div>
+        <div class="stat-viet">Danh muc lieu trinh</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img
+      class="hero-img"
+      src="https://v3b.fal.media/files/b/0a9ca5f4/paa-h9LYwA_PveI22UAMR_15950d286a2e495c995ce397376a5f35.webp"
+      alt="VvG 성형피부과 리얼 모델"
+    />
+    <div class="hero-img-overlay"></div>
+    <div class="hero-img-tag">
+      <div class="hero-img-tag-title">Real Model</div>
+      <div class="hero-img-tag-sub">VvG 성형피부과 / Phong kham VvG</div>
+      <div class="hero-img-tag-viet">Nguoi mau thuc te tai Ha Noi</div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section" id="benefits">
+  <div class="section-header">
+    <span class="section-eyebrow">Benefits</span>
+    <span class="section-eyebrow-viet">Quyen loi danh cho nguoi mau</span>
+    <h2 class="section-title">리얼 모델 특별 혜택</h2>
+    <p class="section-title-viet">Nhung uu dai dac biet danh rieng cho nguoi mau thuc te</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="benefits-grid">
+
+    <!-- ★ 혜택 01: 수정됨 -->
+    <div class="benefit-card">
+      <div class="benefit-icon">01</div>
+      <div class="benefit-title">시술비 특별 할인</div>
+      <div class="benefit-title-viet">Giam gia dac biet cho lieu trinh</div>
+      <p class="benefit-text">
+        선정된 시술 항목에 대해 케이스별 맞춤 할인 혜택을 제공합니다. 시술 종류, 범위, 개인 상태에 따라 할인율이 달라지며, 상담을 통해 구체적인 혜택을 안내드립니다.
+      </p>
+      <p class="benefit-text-viet">
+        Muc giam gia se duoc xac dinh theo tung truong hop cu the, bao gom loai lieu trinh, pham vi va tinh trang ca nhan. Chi tiet uu dai se duoc tu van truc tiep.
+      </p>
+    </div>
+
+    <!-- ★ 혜택 02: 수정됨 -->
+    <div class="benefit-card">
+      <div class="benefit-icon">02</div>
+      <div class="benefit-title">원내 홍보 촬영 제공</div>
+      <div class="benefit-title-viet">Cung cap dich vu chup anh quang ba tai phong kham</div>
+      <p class="benefit-text">
+        시술 전·후 비교를 위한 홍보 촬영을 원내에서 진행합니다. 촬영된 콘텐츠는 병원 SNS 및 마케팅 채널에 활용되며, 모델분께도 제공됩니다.
+      </p>
+      <p class="benefit-text-viet">
+        Chup anh truoc va sau lieu trinh duoc thuc hien ngay tai phong kham. Noi dung se duoc su dung tren kenh mang xa hoi va marketing cua phong kham, dong thoi cung cap cho nguoi mau.
+      </p>
+    </div>
+
+    <!-- 혜택 03: 변경 없음 -->
+    <div class="benefit-card">
+      <div class="benefit-icon">03</div>
+      <div class="benefit-title">추가 시술 할인 쿠폰</div>
+      <div class="benefit-title-viet">Coupon giam gia lieu trinh them</div>
+      <p class="benefit-text">모델 활동 완료 후 추가 시술에 사용 가능한 특별 할인 쿠폰을 드립니다. 지인 추천 시 추가 혜택도 제공됩니다.</p>
+      <p class="benefit-text-viet">Sau khi hoan thanh hoat dong lam nguoi mau, ban se nhan coupon giam gia dac biet cho lieu trinh tiep theo. Co them uu dai khi gioi thieu ban be.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUALIFY -->
+<section class="section section-alt" id="qualify">
+  <div class="qualify-wrap">
+    <div class="qualify-img-wrap">
+      <img
+        class="qualify-img"
+        src="https://v3b.fal.media/files/b/0a9ca5f4/paa-h9LYwA_PveI22UAMR_15950d286a2e495c995ce397376a5f35.webp"
+        alt="VvG 리얼 모델 지원 자격"
+      />
+      <div class="qualify-img-badge">Beauty by VvG</div>
+    </div>
+
+    <div class="qualify-content">
+      <span class="section-eyebrow">Eligibility</span>
+      <span class="section-eyebrow-viet">Dieu kien tuyen chon</span>
+      <h2 class="section-title">지원 자격 안내</h2>
+      <p class="section-title-viet">Thong tin ve dieu kien dang ky tham gia</p>
+      <div class="divider" style="margin: 20px 0;"></div>
+
+      <ul class="qualify-list">
+        <li class="qualify-item">
+          <span class="qualify-num">01</span>
+          <div>
+            <div class="qualify-item-title">연령 및 성별</div>
+            <div class="qualify-item-viet">Do tuoi va gioi tinh</div>
+            <p class="qualify-item-desc">만 18세 이상 여성 누구나 지원 가능합니다.</p>
+            <p class="qualify-item-desc-viet">Phu nu tu 18 tuoi tro len deu co the dang ky.</p>
+          </div>
+        </li>
+        <li class="qualify-item">
+          <span class="qualify-num">02</span>
+          <div>
+            <div class="qualify-item-title">하노이 거주자 우대</div>
+            <div class="qualify-item-viet">Uu tien nguoi cu tru tai Ha Noi</div>
+            <p class="qualify-item-desc">하노이 거주 또는 방문 가능한 분을 우선 선발합니다.</p>
+            <p class="qualify-item-desc-viet">Uu tien nhung nguoi song tai Ha Noi hoac co the den Ha Noi de thuc hien lieu trinh.</p>
+          </div>
+        </li>
+        <li class="qualify-item">
+          <span class="qualify-num">03</span>
+          <div>
+            <div class="qualify-item-title">SNS 활동자 우대</div>
+            <div class="qualify-item-viet">Uu tien nguoi hoat dong mang xa hoi</div>
+            <p class="qualify-item-desc">인스타그램, TikTok, Facebook 등 SNS 활동자는 추가 혜택을 드립니다.</p>
+            <p class="qualify-item-desc-viet">Nguoi hoat dong tren Instagram, TikTok, Facebook se duoc huong them nhieu uu dai bo sung.</p>
+          </div>
+        </li>
+        <li class="qualify-item">
+          <span class="qualify-num">04</span>
+          <div>
+            <div class="qualify-item-title">사진 활용 동의</div>
+            <div class="qualify-item-viet">Dong y su dung hinh anh</div>
+            <p class="qualify-item-desc">병원 홍보용 전·후 사진 및 영상 활용에 동의하셔야 합니다.</p>
+            <p class="qualify-item-desc-viet">Can dong y cho phep phong kham su dung anh va video truoc-sau vao muc dich quang cao.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-header">
+    <span class="section-eyebrow">Process</span>
+    <span class="section-eyebrow-viet">Quy trinh tham gia</span>
+    <h2 class="section-title">지원 및 선발 과정</h2>
+    <p class="section-title-viet">Cac buoc dang ky va tuyen chon nguoi mau</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="process-track">
+    <div class="process-step">
+      <div class="process-circle">1</div>
+      <div class="process-label">온라인 지원</div>
+      <div class="process-label-viet">Dang ky truc tuyen</div>
+      <p class="process-desc">아래 양식을 작성하고 사진을 첨부하여 지원합니다.</p>
+      <p class="process-desc-viet">Dien vao mau don ben duoi va dinh kem anh de dang ky.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-circle">2</div>
+      <div class="process-label">서류 검토</div>
+      <div class="process-label-viet">Xem xet ho so</div>
+      <p class="process-desc">담당 팀에서 지원서 및 사진을 검토합니다. (3-5일)</p>
+      <p class="process-desc-viet">Doi ngu phu trach se xem xet don va anh cua ban trong 3-5 ngay.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-circle">3</div>
+      <div class="process-label">개별 상담</div>
+      <div class="process-label-viet">Tu van ca nhan</div>
+      <p class="process-desc">선발된 분께 Zalo로 연락 후 방문 상담을 진행합니다.</p>
+      <p class="process-desc-viet">Nguoi duoc chon se duoc lien lac qua Zalo va hen tu van truc tiep.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-circle">4</div>
+      <div class="process-label">시술 진행</div>
+      <div class="process-label-viet">Thuc hien lieu trinh</div>
+      <p class="process-desc">전문 의료진과 함께 맞춤 시술을 진행합니다.</p>
+      <p class="process-desc-viet">Thuc hien lieu trinh phu hop voi doi ngu y te chuyen nghiep.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-circle">5</div>
+      <div class="process-label">결과 공유</div>
+      <div class="process-label-viet">Chia se ket qua</div>
+      <p class="process-desc">전·후 사진 촬영 및 SNS 후기 공유로 활동이 완료됩니다.</p>
+      <p class="process-desc-viet">Chup anh truoc-sau va chia se review tren mang xa hoi la buoc hoan tat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section section-alt" id="apply">
+  <div class="section-header">
+    <span class="section-eyebrow">Apply Now</span>
+    <span class="section-eyebrow-viet">Dang ky ngay hom nay</span>
+    <h2 class="section-title">리얼 모델 지원서</h2>
+    <p class="section-title-viet">Don dang ky nguoi mau thuc te VvG</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="form-wrap">
+    <div class="form-sidebar">
+      <div>
+        <h3 class="form-sidebar-title">
+          VvG<em>와 함께</em><br/>
+          아름다움을 완성하세요
+        </h3>
+        <p class="form-sidebar-title-viet">
+          Hoan thien ve dep cua ban cung VvG Clinic
+        </p>
+        <p class="form-sidebar-desc">
+          지원서 제출 후 담당자가 Zalo로 직접 연락드립니다. 궁금한 점은 언제든지 아래 연락처로 문의해 주세요.
+        </p>
+        <p class="form-sidebar-desc-viet">
+          Sau khi nop don, nhan vien phu trach se lien he truc tiep qua Zalo. Moi thac mac xin lien he theo thong tin ben duoi.
+        </p>
+      </div>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <strong>Address / Dia chi</strong>
+            <span class="contact-text">43 P. Tham Tam, Khu do thi Nam Trung Yen,<br/>Yen Hoa, Ha Noi</span>
+            <span class="contact-viet">Phong kham tham my VvG Ha Noi</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+          </div>
+          <div>
+            <strong>Zalo</strong>
+            <span class="contact-text">086.958.1212</span>
+            <span class="contact-viet">Lien he nhanh qua Zalo</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong>Hours / Gio lam viec</strong>
+            <span class="contact-text">Mon - Sat  08:00 - 18:00</span>
+            <span class="contact-viet">Thu Hai - Thu Bay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-body">
+      <form id="modelForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">
+              성함
+              <span class="form-label-viet">Ho va ten</span>
+            </label>
+            <input id="fullname" class="form-input" type="text" placeholder="홍길동 / Nguyen Van A"/>
+          </div>
+          <div class="form-field">
+            <label class="form-label">
+              생년월일
+              <span class="form-label-viet">Ngay sinh</span>
+            </label>
+            <input id="birthday" class="form-input" type="date"/>
+          </div>
+          <div class="form-field">
+            <label class="form-label">
+              연락처 (Zalo)
+              <span class="form-label-viet">So dien thoai (Zalo)</span>
+            </label>
+            <input id="phone" class="form-input" type="tel" placeholder="086.958.XXXX"/>
+          </div>
+          <div class="form-field">
+            <label class="form-label">
+              직업
+              <span class="form-label-viet">Nghe nghiep</span>
+            </label>
+            <input id="job" class="form-input" type="text" placeholder="직업을 입력해주세요 / Nghe nghiep"/>
+          </div>
+          <div class="form-field">
+            <label class="form-label">
+              희망 시술 항목
+              <span class="form-label-viet">Dich vu mong muon</span>
+            </label>
+            <select id="service" class="form-select">
+              <option value="">선택해주세요 / Vui long chon</option>
+              <option>피부 관리 / Cham soc da</option>
+              <option>보톡스 / Botox</option>
+              <option>필러 / Filler</option>
+              <option>쁘띠 성형 / Phau thuat tham my nho</option>
+              <option>리프팅 / Lifting</option>
+              <option>기타 / Khac</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">
+              SNS 계정
+              <span class="form-label-viet">Tai khoan mang xa hoi</span>
+            </label>
+            <input id="social" class="form-input" type="text" placeholder="Instagram / TikTok ID"/>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">
+              자기 소개 및 지원 동기
+              <span class="form-label-viet">Gioi thieu ban than va ly do dang ky</span>
+            </label>
+            <textarea id="introduction" class="form-textarea" placeholder="간단하게 소개해 주세요. / Vui long gioi thieu ban than va ly do ban muon tro thanh nguoi mau thuc te tai VvG."></textarea>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">
+              사진 첨부 (정면 1장 필수)
+              <span class="form-label-viet">Dinh kem anh (bat buoc 1 anh mat truoc)</span>
+            </label>
+            <label class="file-label" for="photo-upload">
+              <span class="file-btn">파일 선택 / Chon tep</span>
+              <div>
+                <div class="file-label-text">JPG, PNG (max 10MB)</div>
+                <div class="file-label-text-viet">Anh mat truoc ro rang, khong deo kinh</div>
+              </div>
+            </label>
+            <input class="form-input-file" id="photo-upload" type="file" accept="image/*"/>
+          </div>
+          <div class="form-field full">
+            <div class="privacy-check">
+              <input type="checkbox" id="privacy"/>
+              <label for="privacy">
+                <p class="privacy-text">
+                  개인정보 수집 및 이용에 동의합니다. <a class="privacy-link" href="#">자세히 보기</a>
+                  <span class="privacy-text-viet">Toi dong y voi chinh sach thu thap va su dung thong tin ca nhan. <a class="privacy-link" href="#">Xem chi tiet</a></span>
+                </p>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button class="form-submit" type="submit">
+          지원서 제출하기 / Nop don dang ky ngay
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">VvG<span>.</span></div>
+      <div class="footer-logo-sub">PLASTIC SURGERY &amp; DERMATOLOGY</div>
+      <div class="footer-logo-sub-viet">Phong kham Phau thuat Tham my &amp; Da lieu VvG</div>
+    </div>
+
+    <div class="footer-contact-block">
+      <div class="footer-contact-title">Contact / Lien he</div>
+      <p class="footer-contact-line">
+        43 P. Tham Tam, Khu do thi Nam Trung Yen, Yen Hoa, Ha Noi
+      </p>
+      <p class="footer-contact-line-viet">Dia chi phong kham</p>
+      <a class="footer-zalo" href="https://zalo.me/0869581212" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.7 9.72 19.79 19.79 0 01.67 1.1 2 2 0 012.66 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.22 6.22l1.97-1.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Zalo : 086.958.1212
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>2025 VvG Plastic Surgery &amp; Dermatology. All rights reserved.</span>
+    <span class="footer-bottom-viet">Ban quyen thuoc ve Phong kham VvG Ha Noi</span>
+  </div>
+</footer>
+
+<script>
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbx9uI82Jb1R4dEy9r9T0R5YInMFiC2bpSbl-EFDGVwx_5xCEkoWtMDpnNNRAFxcVQ/exec";
+</script>
+<script>
+const form = document.getElementById("modelForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const file =
+    document.getElementById("photo-upload").files[0];
+
+  if (!file) {
+    alert("Vui lòng chọn ảnh");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = async () => {
+
+    const base64 =
+      reader.result.split(",")[1];
+
+    const data = {
+      fullname:
+        document.getElementById("fullname").value,
+
+      birthday:
+        document.getElementById("birthday").value,
+
+      phone:
+        document.getElementById("phone").value,
+
+      job:
+        document.getElementById("job").value,
+
+      service:
+        document.getElementById("service").value,
+
+      social:
+        document.getElementById("social").value,
+
+      introduction:
+        document.getElementById("introduction").value,
+
+      fileName: file.name,
+      mimeType: file.type,
+      image: base64
+    };
+
+    try {
+
+      const response = await fetch(
+        SCRIPT_URL,
+        {
+          method: "POST",
+          body: JSON.stringify(data)
+        }
+      );
+
+      const result =
+        await response.json();
+
+      console.log(result);
+
+      if (result.status === "success") {
+
+        alert("Đăng ký thành công!");
+
+        form.reset();
+
+      } else {
+
+        alert(result.message);
+
+      }
+
+    } catch (err) {
+
+      console.error(err);
+
+      alert("Lỗi kết nối");
+
+    }
+  };
+
+  reader.readAsDataURL(file);
+});
+</script>
+</body>
+</html>
