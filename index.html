@@ -1372,6 +1372,16 @@
               </div>
             </label>
             <input class="form-input-file" id="photo-upload" type="file" accept="image/*"/>
+<img
+  id="preview-image"
+  style="
+    display:none;
+    margin-top:15px;
+    max-width:250px;
+    border-radius:10px;
+    border:1px solid #ddd;
+  "
+/>
           </div>
           <div class="form-field full">
             <div class="privacy-check">
@@ -1429,6 +1439,33 @@ const SCRIPT_URL =
 </script>
 <script>
 const form = document.getElementById("modelForm");
+const submitBtn =
+  document.querySelector(".form-submit");
+const photoInput =
+  document.getElementById("photo-upload");
+
+const previewImage =
+  document.getElementById("preview-image");
+
+photoInput.addEventListener("change", () => {
+
+  const file = photoInput.files[0];
+
+  if (!file) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+
+    previewImage.src = e.target.result;
+
+    previewImage.style.display = "block";
+
+  };
+
+  reader.readAsDataURL(file);
+
+});
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -1474,7 +1511,9 @@ form.addEventListener("submit", async (e) => {
       mimeType: file.type,
       image: base64
     };
-
+    submitBtn.disabled = true;
+submitBtn.innerText =
+  "Đang gửi đăng ký...";
     try {
 
       const response = await fetch(
@@ -1490,11 +1529,25 @@ form.addEventListener("submit", async (e) => {
 
       console.log(result);
 
-      if (result.status === "success") {
+   if (result.status === "success") {
 
-        alert("Đăng ký thành công!");
+  submitBtn.innerText =
+    "Đăng ký thành công ✓";
 
-        form.reset();
+  alert("Đăng ký thành công!");
+
+  form.reset();
+
+  previewImage.style.display = "none";
+
+  setTimeout(() => {
+
+    submitBtn.disabled = false;
+
+    submitBtn.innerText =
+      "지원서 제출하기 / Nop don dang ky ngay";
+
+  }, 2000);
 
       } else {
 
@@ -1504,11 +1557,16 @@ form.addEventListener("submit", async (e) => {
 
     } catch (err) {
 
-      console.error(err);
+  submitBtn.disabled = false;
 
-      alert("Lỗi kết nối");
+  submitBtn.innerText =
+    "지원서 제출하기 / Nop don dang ky ngay";
 
-    }
+  console.error(err);
+
+  alert("Lỗi kết nối");
+
+}
   };
 
   reader.readAsDataURL(file);
