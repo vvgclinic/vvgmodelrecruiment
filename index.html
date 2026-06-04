@@ -1367,11 +1367,22 @@
             <label class="file-label" for="photo-upload">
               <span class="file-btn">파일 선택 / Chon tep</span>
               <div>
-                <div class="file-label-text">JPG, PNG (max 10MB)</div>
+                <div class="file-label-text" id="file-name">JPG, PNG (max 10MB)
+</div>
                 <div class="file-label-text-viet">Anh mat truoc ro rang, khong deo kinh</div>
               </div>
             </label>
             <input class="form-input-file" id="photo-upload" type="file" accept="image/*"/>
+            <img
+              id="preview-image"
+              style="
+              display:none;
+              max-width:250px;
+              margin-top:15px;
+              border-radius:8px;
+              border:1px solid #ddd;
+  "
+>
           </div>
           <div class="form-field full">
             <div class="privacy-check">
@@ -1514,5 +1525,34 @@ form.addEventListener("submit", async (e) => {
   reader.readAsDataURL(file);
 });
 </script>
+<script>
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbx9uI82Jb1R4dEy9r9T0R5YInMFiC2bpSbl-EFDGVwx_5xCEkoWtMDpnNNRAFxcVQ/exec";
+</script>
+
+<script>
+const photoInput = document.getElementById("photo-upload");
+const previewImage = document.getElementById("preview-image");
+
+photoInput.addEventListener("change", function () {
+
+  const file = this.files[0];
+
+  if (!file) {
+    previewImage.style.display = "none";
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    previewImage.src = e.target.result;
+    previewImage.style.display = "block";
+  };
+
+  reader.readAsDataURL(file);
+});
+</script>
+
 </body>
 </html>
