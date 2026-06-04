@@ -1018,7 +1018,7 @@
   <div class="hero-left">
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      <span>Real Model Recruit 2026</span>
+      <span>Real Model Recruit 2025</span>
     </div>
 
     <h1 class="hero-title">
@@ -1367,22 +1367,11 @@
             <label class="file-label" for="photo-upload">
               <span class="file-btn">파일 선택 / Chon tep</span>
               <div>
-                <div class="file-label-text" id="file-name">JPG, PNG (max 10MB)
-</div>
+                <div class="file-label-text">JPG, PNG (max 10MB)</div>
                 <div class="file-label-text-viet">Anh mat truoc ro rang, khong deo kinh</div>
               </div>
             </label>
             <input class="form-input-file" id="photo-upload" type="file" accept="image/*"/>
-            <img
-              id="preview-image"
-              style="
-              display:none;
-              max-width:250px;
-              margin-top:15px;
-              border-radius:8px;
-              border:1px solid #ddd;
-  "
->
           </div>
           <div class="form-field full">
             <div class="privacy-check">
@@ -1439,35 +1428,18 @@ const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbx9uI82Jb1R4dEy9r9T0R5YInMFiC2bpSbl-EFDGVwx_5xCEkoWtMDpnNNRAFxcVQ/exec";
 </script>
 <script>
-let isSubmitting = false;
 const form = document.getElementById("modelForm");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  if (isSubmitting) return;
-  isSubmitting = true;
-
-  const submitBtn =
-    document.querySelector(".form-submit");
-
-  submitBtn.disabled = true;
-  submitBtn.innerText = "Đang gửi...";
-
   const file =
     document.getElementById("photo-upload").files[0];
 
   if (!file) {
-  alert("Vui lòng chọn ảnh");
-
-  submitBtn.disabled = false;
-  submitBtn.innerText =
-    "지원서 제출하기 / Nop don dang ky ngay";
-
-  isSubmitting = false;
-
-  return;
-}
+    alert("Vui lòng chọn ảnh");
+    return;
+  }
 
   const reader = new FileReader();
 
@@ -1502,11 +1474,7 @@ form.addEventListener("submit", async (e) => {
       mimeType: file.type,
       image: base64
     };
-    const submitBtn =
-  document.querySelector(".form-submit");
 
-submitBtn.disabled = true;
-submitBtn.innerText = "Đang gửi...";
     try {
 
       const response = await fetch(
@@ -1521,35 +1489,14 @@ submitBtn.innerText = "Đang gửi...";
         await response.json();
 
       console.log(result);
-if (result.status === "duplicate") {
 
-  alert("Số điện thoại này đã đăng ký rồi!");
+      if (result.status === "success") {
 
-  submitBtn.disabled = false;
+        alert("Đăng ký thành công!");
 
-  submitBtn.innerText =
-    "지원서 제출하기 / Nop don dang ky ngay";
+        form.reset();
 
-  isSubmitting = false;
-
-  return;
-}
-if (result.status === "success") {
-
-  alert("Đăng ký thành công!");
-
-  form.reset();
-
-  previewImage.style.display = "none";
-
-  submitBtn.disabled = false;
-
-  submitBtn.innerText =
-    "지원서 제출하기 / Nop don dang ky ngay";
-
-  isSubmitting = false;
-}
-      else {
+      } else {
 
         alert(result.message);
 
@@ -1560,43 +1507,12 @@ if (result.status === "success") {
       console.error(err);
 
       alert("Lỗi kết nối");
-      submitBtn.disabled = false;
 
-  submitBtn.innerText =
-    "지원서 제출하기 / Nop don dang ky ngay";
-
-  isSubmitting = false;
-}
     }
   };
 
   reader.readAsDataURL(file);
 });
 </script>
-
-<script>
-const photoInput = document.getElementById("photo-upload");
-const previewImage = document.getElementById("preview-image");
-
-photoInput.addEventListener("change", function () {
-
-  const file = this.files[0];
-
-  if (!file) {
-    previewImage.style.display = "none";
-    return;
-  }
-
-  const reader = new FileReader();
-
-  reader.onload = function(e) {
-    previewImage.src = e.target.result;
-    previewImage.style.display = "block";
-  };
-
-  reader.readAsDataURL(file);
-});
-</script>
-
 </body>
 </html>
