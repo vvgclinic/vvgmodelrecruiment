@@ -1445,6 +1445,9 @@ const form = document.getElementById("modelForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  if (isSubmitting) return;
+  isSubmitting = true;
+
   const submitBtn =
     document.querySelector(".form-submit");
 
@@ -1455,14 +1458,16 @@ form.addEventListener("submit", async (e) => {
     document.getElementById("photo-upload").files[0];
 
   if (!file) {
-    alert("Vui lòng chọn ảnh");
+  alert("Vui lòng chọn ảnh");
 
-    submitBtn.disabled = false;
-    submitBtn.innerText =
-      "지원서 제출하기 / Nop don dang ky ngay";
+  submitBtn.disabled = false;
+  submitBtn.innerText =
+    "지원서 제출하기 / Nop don dang ky ngay";
 
-    return;
-  }
+  isSubmitting = false;
+
+  return;
+}
 
   const reader = new FileReader();
 
@@ -1538,12 +1543,12 @@ if (result.status === "success") {
   previewImage.style.display = "none";
 
   submitBtn.disabled = false;
+
   submitBtn.innerText =
     "지원서 제출하기 / Nop don dang ky ngay";
 
   isSubmitting = false;
 }
-
       else {
 
         alert(result.message);
