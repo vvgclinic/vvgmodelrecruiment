@@ -1516,7 +1516,19 @@ submitBtn.innerText = "Đang gửi...";
         await response.json();
 
       console.log(result);
+if (result.status === "duplicate") {
 
+  alert("Số điện thoại này đã đăng ký rồi!");
+
+  submitBtn.disabled = false;
+
+  submitBtn.innerText =
+    "지원서 제출하기 / Nop don dang ky ngay";
+
+  isSubmitting = false;
+
+  return;
+}
 if (result.status === "success") {
 
   alert("Đăng ký thành công!");
@@ -1543,7 +1555,13 @@ if (result.status === "success") {
       console.error(err);
 
       alert("Lỗi kết nối");
+      submitBtn.disabled = false;
 
+  submitBtn.innerText =
+    "지원서 제출하기 / Nop don dang ky ngay";
+
+  isSubmitting = false;
+}
     }
   };
 
