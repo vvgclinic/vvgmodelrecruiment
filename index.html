@@ -1018,7 +1018,7 @@
   <div class="hero-left">
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      <span>Real Model Recruit 2025</span>
+      <span>Real Model Recruit 2026</span>
     </div>
 
     <h1 class="hero-title">
@@ -1485,7 +1485,11 @@ form.addEventListener("submit", async (e) => {
       mimeType: file.type,
       image: base64
     };
+    const submitBtn =
+  document.querySelector(".form-submit");
 
+submitBtn.disabled = true;
+submitBtn.innerText = "Đang gửi...";
     try {
 
       const response = await fetch(
@@ -1503,9 +1507,17 @@ form.addEventListener("submit", async (e) => {
 
       if (result.status === "success") {
 
-        alert("Đăng ký thành công!");
+  alert("Đăng ký thành công!");
 
-        form.reset();
+  form.reset();
+
+  previewImage.style.display = "none";
+
+  submitBtn.disabled = false;
+  submitBtn.innerText =
+    "지원서 제출하기 / Nop don dang ky ngay";
+
+}
 
       } else {
 
@@ -1524,10 +1536,6 @@ form.addEventListener("submit", async (e) => {
 
   reader.readAsDataURL(file);
 });
-</script>
-<script>
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbx9uI82Jb1R4dEy9r9T0R5YInMFiC2bpSbl-EFDGVwx_5xCEkoWtMDpnNNRAFxcVQ/exec";
 </script>
 
 <script>
