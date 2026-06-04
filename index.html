@@ -1439,16 +1439,28 @@ const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbx9uI82Jb1R4dEy9r9T0R5YInMFiC2bpSbl-EFDGVwx_5xCEkoWtMDpnNNRAFxcVQ/exec";
 </script>
 <script>
+let isSubmitting = false;
 const form = document.getElementById("modelForm");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  const submitBtn =
+    document.querySelector(".form-submit");
+
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Đang gửi...";
 
   const file =
     document.getElementById("photo-upload").files[0];
 
   if (!file) {
     alert("Vui lòng chọn ảnh");
+
+    submitBtn.disabled = false;
+    submitBtn.innerText =
+      "지원서 제출하기 / Nop don dang ky ngay";
+
     return;
   }
 
@@ -1505,7 +1517,7 @@ submitBtn.innerText = "Đang gửi...";
 
       console.log(result);
 
-      if (result.status === "success") {
+if (result.status === "success") {
 
   alert("Đăng ký thành công!");
 
@@ -1517,9 +1529,10 @@ submitBtn.innerText = "Đang gửi...";
   submitBtn.innerText =
     "지원서 제출하기 / Nop don dang ky ngay";
 
+  isSubmitting = false;
 }
 
-      } else {
+      else {
 
         alert(result.message);
 
